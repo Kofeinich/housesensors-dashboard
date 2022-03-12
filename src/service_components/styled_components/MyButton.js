@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {css} from "styled-components";
 
 export const MyButton =  styled.button`
+  cursor: pointer;
   ${props => props.primary && css`
     background: white;
     color: green;

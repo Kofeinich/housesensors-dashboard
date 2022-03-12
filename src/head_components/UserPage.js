@@ -1,20 +1,27 @@
 import React, {useState} from "react";
-import {MyParagraph} from "../service_components/styled_components/MyParagraph";
-import {MyHeading} from "../service_components/styled_components/MyHeading";
-import {MyInput} from "../service_components/styled_components/MyInput";
-import {MyButton} from "../service_components/styled_components/MyButton";
+import NavBar from "../service_components/function_components/NavBar";
+import SideBar from "../service_components/function_components/SideBar";
+import styled from "styled-components";
+
+export const UserPageWrapper =  styled.div`
+    display: flex;
+`
+
+export const UserPageContentWrapper =  styled.div`
+    display: flex;
+`
+
 
 export default function UserPage() {
-
-
-    return <div>
-        <MyHeading>Please connect u device</MyHeading>
-        <MyParagraph>Type you ID here</MyParagraph>
-        <MyInput/>
-        <MyButton
-            onClick={() => {
-
-            }}>Connect
-        </MyButton>
-    </div>
+    return (
+        <UserPage>
+            <NavBar/>
+            <UserPageWrapper>
+                <SideBar/>
+                <UserPageContentWrapper>
+                    something
+                </UserPageContentWrapper>
+            </UserPageWrapper>
+        </UserPage>
+    )
 }
