@@ -14,7 +14,7 @@ export const UserPageContentWrapper =  styled.div`
 
 export default function UserPage() {
     return (
-        <UserPage>
+        <div>
             <NavBar/>
             <UserPageWrapper>
                 <SideBar/>
@@ -22,6 +22,6 @@ export default function UserPage() {
                     something
                 </UserPageContentWrapper>
             </UserPageWrapper>
-        </UserPage>
+        </div>
     )
 }
