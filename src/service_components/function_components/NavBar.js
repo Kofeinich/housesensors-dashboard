@@ -3,7 +3,9 @@ import {MyParagraph} from "../styled_components/MyParagraph";
 import styled, {css} from "styled-components";
 import CustomImage from "./CustomImage";
 import {MyHeading} from "../styled_components/MyHeading";
-import {Settings} from "@material-ui/icons";
+import {Settings, Apps} from "@material-ui/icons";
+import SideBar from "./SideBar";
+
 
 
 
@@ -27,7 +29,7 @@ export const MyNavBarWrapper =  styled.div`
 export const IconWrapper =  styled.div`
   color: #0da96e;
   position: relative;
-  margin-right: 10px;
+  margin-right: 20px;
   cursor: pointer;
 `
 
@@ -56,23 +58,23 @@ if (document.documentElement.clientWidth <= myWidth){
 }
 
 export default function NavBar() {
-    return (
-        <MyNavBar>
-            <MyNavBarWrapper>
-                <MyNavBarContainer>
-                    <MyHeading primary headingColor={"#0da96e"} headingFontSize={headingFontSize}>
-                        House Sensor
-                    </MyHeading>
-                </MyNavBarContainer>
-                <MyNavBarContainer>
-                    <IconWrapper>
-                        <Settings/>
-                    </IconWrapper>
-                    <ImageWrapper>
-                        <CustomImage src={""} alt={"error"} height={avatarHeight} width={avatarWidth} />
-                    </ImageWrapper>
-                </MyNavBarContainer>
-            </MyNavBarWrapper>
-        </MyNavBar>
+
+    return (<MyNavBar>
+                <MyNavBarWrapper>
+                    <MyNavBarContainer>
+                        <MyHeading primary headingMtop={0} headingMright={0} headingMbottom={0.25} headingMleft={0} headingColor={"#0da96e"} headingFontSize={headingFontSize}>
+                            House Sensor
+                        </MyHeading>
+                    </MyNavBarContainer>
+                    <MyNavBarContainer>
+                        <IconWrapper>
+                            <Settings/>
+                        </IconWrapper>
+                        <ImageWrapper>
+                            <CustomImage src={""} alt={"error"} height={avatarHeight} width={avatarWidth} />
+                        </ImageWrapper>
+                    </MyNavBarContainer>
+                </MyNavBarWrapper>
+            </MyNavBar>
     )
 }
