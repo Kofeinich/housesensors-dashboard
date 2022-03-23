@@ -4,6 +4,7 @@ import SideBar from "../service_components/function_components/SideBar";
 import styled from "styled-components";
 import {getSingleElementValue} from "@testing-library/jest-dom/dist/utils";
 import {Apps} from "@material-ui/icons";
+import Graph from "../service_components/graphs/Graphs"
 
 export const UserPageWrapper =  styled.div`
     display: flex;
@@ -39,14 +40,14 @@ export default function UserPage() {
 
     return (
         <div>
-            <IconWrapper onClick={appsClick()}>
+            <IconWrapper>
                 <Apps className="app-icon"/>
             </IconWrapper>
             <NavBar/>
             <UserPageWrapper>
                 <SideBar visible={visible} />
                 <UserPageContentWrapper>
-                    something
+                    <Graph/>
                 </UserPageContentWrapper>
             </UserPageWrapper>
         </div>

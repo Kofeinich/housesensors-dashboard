@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import './default_files/App.css';
+import './App.css';
 import LogPage from "./head_components/LogPage";
 import UserPage from "./head_components/UserPage";
 
