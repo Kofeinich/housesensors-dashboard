@@ -5,15 +5,27 @@ import '../../assets/css/dashboard.css';
 import MyTextEdit from "../styled_components/MyTextEdit";
 import styled from "styled-components";
 import Bar from "./Bar";
+import Spiral from "./Spiral";
+import {MyHeading} from "../styled_components/MyHeading";
+import {MyParagraph} from "../styled_components/MyParagraph";
+import MyPromo from "../styled_components/MyPromo";
 
 const charts = [
     {
         key: 'lineChart',
-        dataGrid: {x: 3, y: 0, w: 9, h: 9},
+        dataGrid: {x: 4, y: 0, w: 7, h: 7},
         graph: <LineChart/>,
-        heading: 'Line Chart'
+        heading: 'График температуры датчика #12bu383'
 
     },
+    {
+        key: 'spiral',
+        dataGrid: {x: 0, y: 0, w: 4, h: 7},
+        graph: <Spiral/>,
+        static: true,
+        heading: 'Текущее значение температуры'
+    },
+    /*
     {
         key: 'stats',
         dataGrid: {x: 0, y: 1, w: 12, h: 11},
@@ -21,11 +33,11 @@ const charts = [
         heading: 'Bar Chart'
 
     }
+    */
 ]
 
 export const Box = styled.div`
   backgroundColor: #0da96e;
-  boxShadow: rgba(0, 0, 0, 0.28) 0px 0px 5px;
 `
 
 export const Graph = styled.div`
@@ -36,20 +48,34 @@ export const Graph = styled.div`
 
 
 class Graphs extends React.Component {
+
+
     renderCharts() {
         return charts.map(chart => {
+            let promo = <></>;
+            if (chart.key === 'spiral'){
+                promo = <div className={'heading'}>
+                    <div className={'dragMe'}/>
+                    <MyPromo></MyPromo>
+                </div>
+            }
+            else{
+                promo = <div className={'heading'}>
+                    <div className={'dragMe'}/>
+                    <MyTextEdit i={chart.key} defaultValue={chart.heading}/>
+                </div>
+            }
+
                 return (
                     <Box key={chart.key} data-grid={{...chart.dataGrid}} >
-                        <div className={'heading'}>
-                            <div className={'dragMe'}/>
-                            <MyTextEdit i={chart.key} defaultValue={chart.heading}/>
-                        </div>
+                        {promo}
                         {chart.graph}
                     </Box>
                 )
             }
         )
     }
+
 
     render() {
         return (

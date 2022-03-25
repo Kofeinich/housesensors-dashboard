@@ -6,6 +6,7 @@ import {Build} from "@material-ui/icons";
 
 export const MySideBar = styled.div`
   flex: 1;
+  flexDirection: 'column';
   height: calc(100vh - 50px);
   position: sticky;
   top: 50px;
@@ -79,15 +80,21 @@ export default function SideBar(visible) {
                     <SideBarList>
                         <SideBarListItem>
                             <MyParagraph paragraphMtop={0} paragraphMright={0} paragraphMbottom={0} paragraphMleft={0}
-                                         paragraphAlign={"center"} paragraphColor={"#eceff1"}>Dashboard1</MyParagraph>
+                                         paragraphAlign={"left"} paragraphColor={"#eceff1"}>
+                                Дашборд #12bu383
+                            </MyParagraph>
                         </SideBarListItem>
                         <SideBarListItem>
                             <MyParagraph paragraphMtop={0} paragraphMright={0} paragraphMbottom={0} paragraphMleft={0}
-                                         paragraphAlign={"center"} paragraphColor={"#eceff1"}>Dashboard1</MyParagraph>
+                                         paragraphAlign={"left"} paragraphColor={"#eceff1"}>
+                                Дашборд №2
+                            </MyParagraph>
                         </SideBarListItem>
                         <SideBarListItem>
                             <MyParagraph paragraphMtop={0} paragraphMright={0} paragraphMbottom={0} paragraphMleft={0}
-                                         paragraphAlign={"center"} paragraphColor={"#eceff1"}>Dashboard1</MyParagraph>
+                                         paragraphAlign={"left"} paragraphColor={"#eceff1"}>
+                                Датчик #erv765n
+                            </MyParagraph>
                         </SideBarListItem>
                     </SideBarList>
                 </SideBarMenu>

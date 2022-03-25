@@ -13,6 +13,8 @@ const EditableInput = styled.input`
   text-overflow: ellipsis;
   width: 50%;
   z-index: 1;
+  text-align: left;
+  margin: 5px;
 
   :hover {
     border: 1px solid rgba(13, 169, 110, 0.5);

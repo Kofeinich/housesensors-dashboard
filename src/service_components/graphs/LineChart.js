@@ -5,12 +5,12 @@ import {updateData} from "../../actions/action-dispatcher";
 import connect from "react-redux/es/connect/connect";
 
 export const theme = {
-    tickText: '#7c7c7c',
-    gridStroke: '#000',
+    tickText: '#036742',
+    gridStroke: '#0da96e',
     lineStroke: '#ff8b00',
-    dotFill: '#1c0d00',
-    dotStroke: '#b1b1b1',
-    legendColor: '#7c7c7c'
+    dotFill: '#0da96e',
+    dotStroke: '#036742',
+    legendColor: '#036742'
 }
 
 export class CustomizedAxisTick extends React.Component{
@@ -49,7 +49,7 @@ class LineGraph extends React.Component {
         return (
             <ResponsiveContainer>
                 <LineChart data={this.state.data}
-                           margin={{ top: 10, right: 40, left:10, bottom:50 }}
+                           margin={{ top: 0, right: 40, left:0, bottom:0 }}
                 >
                     <CartesianGrid stroke={theme.gridStroke}/>
                     <XAxis
@@ -57,14 +57,14 @@ class LineGraph extends React.Component {
                     <YAxis
                         domain={['dataMin-5', 'dataMax+10']} tick={<CustomizedAxisTick/>}/>
                     <Tooltip
-                        wrapperStyle={{backgroundColor:'#000', fontSize:12}}/>
+                        wrapperStyle={{backgroundColor:'#0da96e', fontSize:12}}/>
                     <Legend
                         wrapperStyle={{color:theme.legendColor, fontSize:12}}
                         layout={'vertical'} verticalAlign={'top'}
                         height={36}/>
                     <Line
                         type="linear"
-                        dataKey="value"
+                        dataKey="temperature"
                         stroke={theme.lineStroke}
                         dot={{ stroke: theme.dotStroke, strokeWidth: 1, fill:theme.dotFill}}
                         activeDot/>
