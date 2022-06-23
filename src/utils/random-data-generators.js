@@ -9,29 +9,39 @@ const buckets = [
     '#e7071a', /* >40 */
 ]
 
-const generateLineData = () => {
-    let data = []
-
-    for(let i=0; i<31; i++){
-        let obj={}
-        obj.name = (i+1).toString()
-        obj.temperature = Math.floor((Math.random()*55)+1)
-        data.push(obj)
+const generateLineData = (data) => {
+    if (data === null) {
+        data = []
     }
+    if (data.length === 0) {
+        for (let i = 0; i < 31; i++) {
+            let obj = {}
+            obj.name = (i + 1).toString()
+            obj.temperature = Math.floor((Math.random() * 55) + 1)
+            data.push(obj)
+        }
+    } else {
+        data.splice(0, 1)
+        let obj = {}
+        obj.name = (31).toString()
+        obj.temperature = Math.floor((Math.random() * 55) + 1)
+        data.push(obj)
 
+    }
     return data
 }
+
 
 const generateBarData = () => {
     let data = []
 
-    for(let i=0; i<20; i++){
-        let obj={}
+    for (let i = 0; i < 20; i++) {
+        let obj = {}
         obj.name = i.toString()
-        let num = Math.floor((Math.random()*35)+1)
-        num *= Math.floor(Math.random()*2) === 1 ? 1 : -1
+        let num = Math.floor((Math.random() * 35) + 1)
+        num *= Math.floor(Math.random() * 2) === 1 ? 1 : -1
         obj.pv = num
-        num *= Math.floor(Math.random()*2) === 1 ? 1 : -1
+        num *= Math.floor(Math.random() * 2) === 1 ? 1 : -1
         obj.uv = num
         data.push(obj)
     }
@@ -43,23 +53,23 @@ const generateSpiralData = () => {
     let data = []
     let j = 10;
 
-    for(let i=0; i<8; i++){
-        let obj={}
-        if (i === 0){
+    for (let i = 0; i < 8; i++) {
+        let obj = {}
+        if (i === 0) {
             obj.name = '< 10'
-            obj.value = Math.floor((Math.random()*35)+1)
+            obj.value = Math.floor((Math.random() * 35) + 1)
             obj.fill = buckets[i]
             data.push(obj)
         }
-        if (i > 0 && i < 7){
-            obj.name = `${j}-${j+5}`
-            obj.value = Math.floor((Math.random()*35)+1)
+        if (i > 0 && i < 7) {
+            obj.name = `${j}-${j + 5}`
+            obj.value = Math.floor((Math.random() * 35) + 1)
             obj.fill = buckets[i]
             data.push(obj)
         }
-        if (i === 7){
+        if (i === 7) {
             obj.name = '> 40'
-            obj.value = Math.floor((Math.random()*35)+1)
+            obj.value = Math.floor((Math.random() * 35) + 1)
             obj.fill = buckets[i]
             data.push(obj)
         }

@@ -23,14 +23,14 @@ const updateSpiralData = (data) => {
 }
 
 
-export const updateData = (type) => {
+export const updateData = (type, oldData) => {
     switch (type) {
         case 'bar':
             return ((dispatch)=>dispatch(updateBarData(randomData.generateBarData())))
         case 'spiral':
             return ((dispatch)=>dispatch(updateSpiralData(randomData.generateSpiralData())))
         case 'line':
-            return ((dispatch)=>dispatch(updateLineData(randomData.generateLineData())))
+            return ((dispatch)=>dispatch(updateLineData(randomData.generateLineData(oldData))))
         default:
             return null
     }

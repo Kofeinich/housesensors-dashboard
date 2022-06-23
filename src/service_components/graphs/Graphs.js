@@ -56,7 +56,13 @@ class Graphs extends React.Component {
             if (chart.key === 'spiral'){
                 promo = <div className={'heading'}>
                     <div className={'dragMe'}/>
-                    <MyPromo></MyPromo>
+                    <MyPromo/>
+                </div>
+            }
+            if (chart.key === 'bar'){
+                promo = <div className={'heading'}>
+                    <div className={'dragMe'}/>
+                    <MyPromo/>
                 </div>
             }
             else{
