@@ -10,6 +10,7 @@
 
 # production
 /build
+/dashboard.tar.gz
 
 # misc
 .DS_Store
